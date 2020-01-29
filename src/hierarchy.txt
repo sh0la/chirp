@@ -1,0 +1,19 @@
+User
+  + Page
+    + Header
+    + NavBar
+      - Filter Users
+      - Sort Posts
+    + LeftNavBar
+    + RightNavBar
+    + Form
+    + Timeline
+      + Cards
+        - Avatar...User
+        - Name ...User
+        - Post ...Form
+        + Comment
+          - New form (reuse form component?)
+          - Post (reuse post component?)
+        + Likes
+        + Date
