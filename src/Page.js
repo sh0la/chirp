@@ -12,6 +12,39 @@ class Page extends Component {
   constructor(props) {
     super(props);
     console.log(props)
+
+    this.state = {
+      dataStream: [
+        {
+        id: Date.now(),
+        date: new Date(),
+        name: 'Paul',
+        avatarUrl: './images/boy.jpg',
+        comment: ['hi','what is a nice', 'going to the beach'],
+        likes: 0,
+        emoticon: ['lol','hi','sad'],
+        
+      },
+       {id: Date.now(),
+        date: new Date(),
+        name: 'Koby',
+        avatarUrl: './images/cat.jpg',
+        comment: ['hi','what is a nice', 'going to the beach'],
+        likes: 0,
+        emoticon: ['lol','hi','sad'],
+      },
+      { id: Date.now(),
+        date: new Date(),
+        name: 'Lobs',
+        avatarUrl: './images/girl.jpg',
+        comment: ['hi','what is a nice', 'going to the beach'],
+        likes: 0,
+        emoticon: ['lol','hi','sad']
+      }
+      ],
+    }
+
+
     // this.state ={
     //   users : this.props.userArray
     // }
@@ -21,19 +54,19 @@ class Page extends Component {
   
 
   render() {
-  console.log(this.props.userArray)    
-    return(<div></div>)
-      {/* <div>
-        <Header />
+  //console.log(this.props.userArray)    
+    return(
+      <div>
+        {/* <Header />
         <Navbar />
         <LeftNavBar />
         <RightNavBar />
-        <Postform />
-        <Timeline name={this.props.name}
-                  avatarUrl={this.props.avatar}
+        <Postform /> */}
+        <Timeline 
+          stream={this.state.dataStream}        
         />
-      </div> */}
-      
+      </div> 
+    )  
     
   
 
