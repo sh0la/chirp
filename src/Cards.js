@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 import Avatar from './Avatar';
-import Likes from './Likes';
-import Post from './Post';
+import Likes from './Like';
 import UserName from './Username';
+import Time from './Time';
+import Reply from './Reply';
+import Like from './Like';
+import Emoji from './Emoji';
+import Message from './Message';
 
 
 class Cards extends Component {
@@ -14,36 +18,52 @@ class Cards extends Component {
 
 
   render() {
-    const cards = 
-        <section className="postCard">
-          <div>
-            <Avatar avatarUrl={this.props.avatar}/>
-          </div> 
-          <div className="rightCard"> 
-            <div>
-              <UserName stringName={this.props.username}/>
-              {/* <Date />   */}
-            </div>  
-            <Post />
-            <div>
-              {/* <Like /> */}
-              {/* <Comment /> */}
-              {/* <Emoticon /> */}
-            </div>       
-          </div>
-        </section>
+      console.log(this.props.post.name)
 
-    // const cardList = cards.map(card => {
-    //   return (card)
-    // })
-     
-    return (
+    const posts =
+    <div className='postCard'>
+      <Avatar 
+        className='userImg'
+        avatar={this.props.post.avatarUrl} 
+      />
+      <div className="rightCard">
+        <div className='topItem'>
+          <span id='userName'>
+            <UserName
+              username={this.props.post.name}
+            />
+          </span>
+          <span id='date'>
+            <Time 
+              update={this.props.post.date} 
+            />
+          </span>
+        </div>
+        <Message 
+          className='userPost'
+          comment={this.props.post.comment}
+        />
+        <div className='bottomItem'>
+          <span className='reply'>
+            <Reply />
+          </span>
+          <span className='like'>
+            <Like />
+          </span>
+          <span className='emoji'>
+            <Emoji />
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    return(
       <React.Fragment>
-        {cards}
+        {posts}
       </React.Fragment>
     )
   }
-
 
 }
 
