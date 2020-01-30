@@ -11,10 +11,14 @@ class Timeline extends Component {
   }
 
   render() {
+      const listOfPosts = this.props.stream.map(post => {
+        return <Cards post={post}/>
+      })
+
     return(
-      <Cards username={this.props.name}
-             avatar={this.props.avatarUrl}  
-      />
+      <div>
+        {listOfPosts}
+      </div>
     )
   }
 }
