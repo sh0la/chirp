@@ -11,35 +11,41 @@ class User extends Component {
     this.state = {
       users: [
         {
+          id:1,
         name: 'Paul',
-        avatarUrl: '#',
+        avatarUrl: './images/boy.jpg',
+        
       },
-       {
+       {id:2,
         name: 'Koby',
-        avatarUrl: '#'
+        avatarUrl: './images/cat.jpg'
       },
-      {
+      {id:3,
         name: 'Lobs',
-        avatarUrl: '#'
+        avatarUrl: './images/girl.jpg'
       }
       ],
     }
 
-  
   }
 
- 
-  
-
   render() {
-  
-    const names = this.state.users.map(name => {
-      return <Page name={name}/>
-    })
+      //const [name, avatarUrl] = this.state.users;
+      //console.log(name)
+      const userslist = this.state.users;
+      
+      const userList = userslist.map(user => {
+        return (
+          <div>
+            <li>{user.id}</li>
+            <li>{user.name}</li>
+          </div>
+          
+        )
+      })
 
-    return(
-      <div>
-        {names}
+    return( <div>{userList}
+    <Page userArray ={this.state.users} />
       </div>
     )
   }

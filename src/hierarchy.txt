@@ -7,6 +7,7 @@ User
     + LeftNavBar
     + RightNavBar
     + Form
+      - Date
     + Timeline
       + Cards
         - Avatar...User
@@ -16,4 +17,4 @@ User
           - New form (reuse form component?)
           - Post (reuse post component?)
         + Likes
-        + Date
+        
