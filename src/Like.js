@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Likes() {
+function Like() {
   return(
     <p className="userName"></p>
   )
 }
 
 
-export default Likes;
+export default Like;
