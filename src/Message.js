@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Message() {
+function Message(props) {
 
   return (
-    <div></div>
+    <React.Fragment>
+      {props.comment}
+    </React.Fragment>
   )
    
 }
