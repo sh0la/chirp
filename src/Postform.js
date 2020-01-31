@@ -5,8 +5,6 @@ class Postform extends Component {
   constructor() {
     super();
 
-    //receive ur array of users, as props (this.props.array)
-
     this.state = {output:''};
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -17,13 +15,11 @@ class Postform extends Component {
     const text = this.state.output;
     event.preventDefault()
     this.props.formSubmit(text)
+    this.setState({output:''})
 
   }
 
   handleChange(event) {
-
-    //u will  make an object id,john,avatar, message
-    //push this object into ur array usersArray.push(ur new object)
     this.setState({output: event.target.value})
   }
 
@@ -50,8 +46,6 @@ class Postform extends Component {
       </form>
     )
   }
-
-
 }
 
 export default Postform;
