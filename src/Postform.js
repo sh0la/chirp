@@ -11,21 +11,17 @@ class Postform extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.props.idStream)
     const text = this.state.output;
     event.preventDefault()
     this.props.formSubmit(text)
     this.setState({output:''})
-
   }
 
   handleChange(event) {
     this.setState({output: event.target.value})
   }
 
-
   render() {
-
     return(
       <form 
         action=""
