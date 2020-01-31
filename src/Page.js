@@ -6,6 +6,7 @@ import Navbar from './NavBar';
 import LeftNavBar from './LeftNavBar';
 import RightNavBar from './RightNavBar';
 import Postform from './Postform';
+import Cards from './Cards';
 
 
 class Page extends Component {
@@ -66,6 +67,7 @@ class Page extends Component {
 
     this.addLikes=this.addLikes.bind(this);
     this.addMessage=this.addMessage.bind(this);
+    this.sortLikes=this.sortLikes.bind(this);
   }
 
   addMessage(comment) {
@@ -100,11 +102,36 @@ class Page extends Component {
     this.setState({dataStream: posts})
   }
 
+  sortLikes() {
+    let listOfMessages = this.state.dataStream.sort(
+      (a, b) => {
+        return (b.likes - a.likes)
+      }
+    );
+
+    return (
+      listOfMessages.map(post => {
+        return(
+          <main>
+            <Cards 
+              post={post}
+              handleAllClicks={this.compileLikes}
+            />
+          </main>
+        )
+      })
+    )
+  }
+
+
   render() {
     return(
       <div>
         <Header headerStream={this.state.dataStream}/>
-        <Navbar navStream={this.state.dataStream}/>
+        <Navbar 
+          navStream={this.state.dataStream}
+          handleSort={this.sortLikes}
+        />
         <main>
           <LeftNavBar leftStream={this.state.dataStream}/>
           <div>
