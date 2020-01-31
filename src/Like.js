@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
 class Like extends Component {
-  
   constructor(props) {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
-    console.log(props.likes)
   }
   
   handleClick() {
@@ -19,7 +17,7 @@ class Like extends Component {
         <div class="counter">
           <span class="like" 
             onClick={this.handleClick} 
-            counter={this.props.counter}
+            likes={this.props.likes}
             key={this.props.id} 
           > Like
           </span>
