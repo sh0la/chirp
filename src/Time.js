@@ -2,11 +2,13 @@ import React from 'react';
 
 
 
-function Time() {
-
-
+function Time(props) {
+  console.log(props)
+  const newDate = JSON.stringify(props.update)
   return(
-    <div></div>
+    <span id='date'>
+      {newDate}
+    </span>
   )
 }
 

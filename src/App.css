@@ -11,7 +11,7 @@ header{
   text-align: center;
 }
 
-.left-nav, .right-nav {
+.leftNav, .rightNav {
   width: 25%;
   background-color: grey;
   margin: 0;
@@ -34,13 +34,13 @@ h1, h3 {
   padding-bottom: 20px;
 }
 
-.post-card {
+.postCard {
   background-color: rgb(243, 240, 240);
   display: flex;
   margin: 15px;
 }
 
-.right-card {
+.rightCard {
   margin-left: 25px;
 }
 
@@ -50,7 +50,7 @@ h1, h3 {
   border-radius: 50px;
 }
 
-.user-img {
+.userImg {
   width: 150px;
   height: 150px;
   margin-right: 25px;
@@ -62,7 +62,7 @@ h1, h3 {
   padding-left: 15px;
 }
 
-.user-cat {
+.userCat {
   width: 150px;
   display: flex;
   align-items: center;
@@ -80,9 +80,9 @@ h1, h3 {
   border-color: transparent transparent rgb(7, 6, 6) transparent;
 }
 
-#message {
+.message {
   border: 1px solid rgb(206, 204, 204);
-  width: 90%;
+  width: 85%;
   height: 30px;
   padding-left: 10px;
   margin-left: 15px;
@@ -91,4 +91,18 @@ h1, h3 {
 
 .like {
   margin: 0 20px;
+}
+
+.bottomItem {
+  margin-top: 15%;
+}
+
+.btn {
+  border: 1px solid rgb(207, 205, 205);
+  padding: 5px 30px;
+  background-color: rgb(124, 124, 241);
+  margin-left: 10px;
+  color: white;
+  font-size: 120%;
+  border-radius: 8%;
 }
