@@ -44,15 +44,11 @@ class Page extends Component {
       ],
     }
 
-
-    // this.state ={
-    //   users : this.props.userArray
-    // }
     this.addLikes=this.addLikes.bind(this);
+    this.addMessage=this.addMessage.bind(this);
   }
 
   addMessage(comment) {
-    console.log(comment)
     
     let newPost = {
       id: Date.now(),
@@ -63,19 +59,18 @@ class Page extends Component {
       likes: 0,
       emoticon: [' :-) ', ' :/ ', ' :( ', ' :| ']
     }
+
     newPost.comment = comment;
-    
     let posts =  [...this.state.dataStream]
     posts.unshift(newPost)
-    //Object.assign(posts, {newPost})
-
+    
     this.setState({dataStream: posts})
   }
 
   
   addLikes(likes, id) {
     let posts = [...this.state.dataStream]
-
+    
     posts.forEach((post) => {
       if(post.id === id) {
         Object.assign(post, {likes: likes})
@@ -84,10 +79,7 @@ class Page extends Component {
     this.setState({dataStream: posts})
   }
 
-  
-
   render() {
-  //console.log(this.props.userArray)    
     return(
       <div>
         <Header headerStream={this.state.dataStream}/>
@@ -103,9 +95,6 @@ class Page extends Component {
         />
       </div> 
     )  
-    
-  
-
   }
 }
 
