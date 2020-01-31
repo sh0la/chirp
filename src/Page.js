@@ -11,12 +11,11 @@ import Postform from './Postform';
 class Page extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
-
+    
     this.state = {
       dataStream: [
         {
-        id: Date.now(),
+        id: Date.now() - 100,
         date: new Date(),
         name: 'Paul',
         avatarUrl: require('./images/boy.jpg'),
@@ -26,7 +25,7 @@ class Page extends Component {
         emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
         
       },
-       {id: Date.now(),
+       {id: Date.now() - 200,
         date: new Date(),
         name: 'Koby',
         avatarUrl: require('./images/cat.jpg'),
@@ -35,7 +34,7 @@ class Page extends Component {
         likes: 0,
         emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
       },
-      { id: Date.now(),
+      { id: Date.now() - 300,
         date: new Date(),
         name: 'Lobs',
         avatarUrl: require('./images/girl.jpg'),
@@ -44,7 +43,7 @@ class Page extends Component {
         likes: 0,
         emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
       },
-      {id: Date.now(),
+      {id: Date.now() - 400,
         date: new Date(),
         name: 'Theresa',
         avatarUrl: require('./images/cat.jpg'),
@@ -53,7 +52,7 @@ class Page extends Component {
         likes: 0,
         emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
       },
-      { id: Date.now(),
+      { id: Date.now() - 500,
         date: new Date(),
         name: 'Quinn',
         avatarUrl: require('./images/girl.jpg'),
@@ -77,6 +76,7 @@ class Page extends Component {
       name: 'Lobs',
       avatarUrl: require('./images/girl.jpg'),
       comment: '',
+      reply: ['Easy peasy','That is not fun', 'Oui Oui'],
       likes: 0,
       emoticon: [' :-) ', ' :/ ', ' :( ', ' :| ']
     }
@@ -105,19 +105,23 @@ class Page extends Component {
       <div>
         <Header headerStream={this.state.dataStream}/>
         <Navbar navStream={this.state.dataStream}/>
-        <LeftNavBar leftStream={this.state.dataStream}/>
-        <RightNavBar rightStream={this.state.dataStream}/>
-        <Postform formSubmit={this.addMessage}
-                  idStream={this.state.dataStream}
-        />
-        <Timeline 
-          stream={this.state.dataStream} 
-          submitLikes={this.addLikes}       
-        />
+        <main>
+          <LeftNavBar leftStream={this.state.dataStream}/>
+          <div>
+            <Postform formSubmit={this.addMessage}
+                      idStream={this.state.dataStream}
+            />
+            <Timeline 
+              stream={this.state.dataStream} 
+              submitLikes={this.addLikes}       
+            />
+          </div>
+          <RightNavBar rightStream={this.state.dataStream}/>
+        </main>
+        
       </div> 
     )  
   }
 }
-
 
 export default Page;
