@@ -1,0 +1,94 @@
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  background-color: rgb(162, 183, 250);
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.left-nav, .right-nav {
+  width: 25%;
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 20px 20px 0 20px;
+  padding: 30px 30px 0 30px;
+}
+
+.spread {
+  display: flex;
+  
+}
+
+h1, h3 {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.post-card {
+  background-color: rgb(243, 240, 240);
+  display: flex;
+  margin: 15px;
+}
+
+.right-card {
+  margin-left: 25px;
+}
+
+.userxx-img {
+  width: 50px;
+  height: 50px;
+  
+}
+
+.user-img {
+  width: 150px;
+  height: 150px;
+  margin-right: 25px;
+  border-radius: 180px;
+  
+}
+
+#date {
+  padding-left: 15px;
+}
+
+.user-cat {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#triangle {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent rgb(7, 6, 6) transparent;
+}
+
+#message {
+  border: 1px solid rgb(206, 204, 204);
+  width: 90%;
+  height: 30px;
+  padding-left: 10px;
+  margin-left: 15px;
+  font-size: 95%;
+}
+
+.like {
+  margin: 0 20px;
+}
