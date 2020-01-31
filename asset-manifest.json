@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/chirp/static/css/main.1d911f20.chunk.css",
+    "main.js": "/chirp/static/js/main.e2d91579.chunk.js",
+    "main.js.map": "/chirp/static/js/main.e2d91579.chunk.js.map",
+    "runtime-main.js": "/chirp/static/js/runtime-main.cb5525f0.js",
+    "runtime-main.js.map": "/chirp/static/js/runtime-main.cb5525f0.js.map",
+    "static/js/2.c1330d2d.chunk.js": "/chirp/static/js/2.c1330d2d.chunk.js",
+    "static/js/2.c1330d2d.chunk.js.map": "/chirp/static/js/2.c1330d2d.chunk.js.map",
+    "index.html": "/chirp/index.html",
+    "precache-manifest.3699a5fda33db3e6796e3d638a847956.js": "/chirp/precache-manifest.3699a5fda33db3e6796e3d638a847956.js",
+    "service-worker.js": "/chirp/service-worker.js",
+    "static/css/main.1d911f20.chunk.css.map": "/chirp/static/css/main.1d911f20.chunk.css.map",
+    "static/js/2.c1330d2d.chunk.js.LICENSE": "/chirp/static/js/2.c1330d2d.chunk.js.LICENSE",
+    "static/media/boy.jpg": "/chirp/static/media/boy.c44a0131.jpg",
+    "static/media/cat.jpg": "/chirp/static/media/cat.a5bbcc98.jpg",
+    "static/media/girl.jpg": "/chirp/static/media/girl.36f39706.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb5525f0.js",
+    "static/js/2.c1330d2d.chunk.js",
+    "static/css/main.1d911f20.chunk.css",
+    "static/js/main.e2d91579.chunk.js"
+  ]
+}
