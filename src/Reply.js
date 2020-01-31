@@ -3,7 +3,11 @@ import React from 'react';
 function Reply() {
 
   return (
-    <div></div>
+    <a href="http://" 
+      className='reply'
+    >
+      comment
+    </a>
   )
    
 }

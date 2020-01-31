@@ -1,9 +1,15 @@
 import React from 'react';
 
-function Emoji() {
+function Emoji(props) {
+  console.log(props.emojis)
+  const emojigroup = props.emojis.map(emoji => {
+    return(emoji + '   ')
+  })
 
   return (
-    <div></div>
+    <React.Fragment>
+     {emojigroup}
+    </React.Fragment>
   )
    
 }
