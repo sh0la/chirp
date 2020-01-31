@@ -4,9 +4,11 @@ import React from 'react';
 
 function Time(props) {
   console.log(props)
-  const newDate = JSON.stringify(props.update)
+  let newDate = JSON.stringify(props.update)
+  newDate =  newDate.substr(12,[5])
+
   return(
-    <span id='date'>
+    <span className='date'>
       {newDate}
     </span>
   )
