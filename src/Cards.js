@@ -14,8 +14,14 @@ class Cards extends Component {
   constructor(props) {
     super(props);
     console.log(props)  
+
+    this.handleClickTransfer=this.handleClickTransfer.bind(this);
   }
 
+  handleClickTransfer() {
+    let sumLikes = this.props.post.likes + 1;
+    this.props.handleAllClicks(sumLikes, this.props.post.id)
+  }
 
   render() {
       console.log(this.props.post.name)
@@ -23,7 +29,6 @@ class Cards extends Component {
     const posts =
     <div className='postCard'>
       <Avatar 
-        className='userImg'
         avatar={this.props.post.avatarUrl} 
       />
       <div className="rightCard">
@@ -33,11 +38,9 @@ class Cards extends Component {
               username={this.props.post.name}
             />
           </span>
-          <span id='date'>
             <Time 
               update={this.props.post.date} 
             />
-          </span>
         </div>
         <Message 
           className='userPost'
@@ -48,10 +51,14 @@ class Cards extends Component {
             <Reply />
           </span>
           <span className='like'>
-            <Like />
+            <Like 
+              likeCounts={this.handleClickTransfer}
+              likes={this.props.post.likes}
+            />
           </span>
           <span className='emoji'>
-            <Emoji />
+            <Emoji 
+              emojis={this.props.post.emoticon}/>
           </span>
         </div>
       </div>
