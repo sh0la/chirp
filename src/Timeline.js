@@ -13,7 +13,6 @@ class Timeline extends Component {
 
   compileLikes(likes,id) {
     this.props.submitLikes(likes,id)
-
   }
 
   render() {
