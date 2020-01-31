@@ -19,27 +19,27 @@ class Page extends Component {
         id: Date.now(),
         date: new Date(),
         name: 'Paul',
-        avatarUrl: './images/boy.jpg',
-        comment: ['hi','what is a nice', 'going to the beach'],
+        avatarUrl: require('./images/boy.jpg'),
+        comment:  'going to the beach',
         likes: 0,
-        emoticon: ['lol','hi','sad'],
+        emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
         
       },
        {id: Date.now(),
         date: new Date(),
         name: 'Koby',
-        avatarUrl: './images/cat.jpg',
-        comment: ['hi','what is a nice', 'going to the beach'],
+        avatarUrl: require('./images/cat.jpg'),
+        comment: 'wash the face',
         likes: 0,
-        emoticon: ['lol','hi','sad'],
+        emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
       },
       { id: Date.now(),
         date: new Date(),
         name: 'Lobs',
-        avatarUrl: './images/girl.jpg',
-        comment: ['hi','what is a nice', 'going to the beach'],
+        avatarUrl: require('./images/girl.jpg'),
+        comment: ['sending mails','Christmas is fun', 'Dinner almost ready'],
         likes: 0,
-        emoticon: ['lol','hi','sad']
+        emoticon: [' :-) ', ' :/ ', ' :( ', ' :| '],
       }
       ],
     }
@@ -48,8 +48,41 @@ class Page extends Component {
     // this.state ={
     //   users : this.props.userArray
     // }
+    this.addLikes=this.addLikes.bind(this);
   }
+
+  addMessage(comment) {
+    console.log(comment)
+    
+    let newPost = {
+      id: Date.now(),
+      date: new Date(),
+      name: 'Lobs',
+      avatarUrl: require('./images/girl.jpg'),
+      comment: '',
+      likes: 0,
+      emoticon: [' :-) ', ' :/ ', ' :( ', ' :| ']
+    }
+    newPost.comment = comment;
+    
+    let posts =  [...this.state.dataStream]
+    posts.unshift(newPost)
+    //Object.assign(posts, {newPost})
+
+    this.setState({dataStream: posts})
+  }
+
   
+  addLikes(likes, id) {
+    let posts = [...this.state.dataStream]
+
+    posts.forEach((post) => {
+      if(post.id === id) {
+        Object.assign(post, {likes: likes})
+      }
+    })
+    this.setState({dataStream: posts})
+  }
 
   
 
@@ -57,13 +90,16 @@ class Page extends Component {
   //console.log(this.props.userArray)    
     return(
       <div>
-        {/* <Header />
-        <Navbar />
-        <LeftNavBar />
-        <RightNavBar />
-        <Postform /> */}
+        <Header headerStream={this.state.dataStream}/>
+        <Navbar navStream={this.state.dataStream}/>
+        <LeftNavBar leftStream={this.state.dataStream}/>
+        <RightNavBar rightStream={this.state.dataStream}/>
+        <Postform formSubmit={this.addMessage}
+                  idStream={this.state.dataStream}
+        />
         <Timeline 
-          stream={this.state.dataStream}        
+          stream={this.state.dataStream} 
+          submitLikes={this.addLikes}       
         />
       </div> 
     )  
