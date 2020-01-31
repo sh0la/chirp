@@ -3,9 +3,9 @@ import React from 'react';
 function Message(props) {
 
   return (
-    <React.Fragment>
+    <div className='messageDisplay'>
       {props.comment}
-    </React.Fragment>
+    </div>
   )
    
 }
